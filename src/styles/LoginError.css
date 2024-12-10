@@ -1,0 +1,86 @@
+/* Estilo general para la página de error */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, 
+  rgba(139, 0, 0, 0.8),        /* Dark Red */
+  rgba(220, 20, 60, 0.7),      /* Crimson */
+  rgba(255, 69, 0, 0.7),       /* Red-Orange */
+  rgba(178, 34, 34, 0.7),      /* Firebrick */
+  rgba(255, 99, 71, 0.8),      /* Tomato */
+  rgba(0, 0, 0, 0.8)           /* Black */
+);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+  }
+  
+  /* Caja principal del error */
+  .error-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .error-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Título del error */
+  .error-title {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    animation: fadeInAnimation 2s ease-in-out;
+  }
+  
+  /* Mensaje del error */
+  .error-message {
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+  }
+  
+  /* Botón para regresar a la página de inicio */
+  .error-button {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .error-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Animación del fondo */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Animación para hacer aparecer el contenido */
+  @keyframes fadeInAnimation {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  

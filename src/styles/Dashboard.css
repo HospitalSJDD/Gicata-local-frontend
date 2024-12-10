@@ -1,0 +1,263 @@
+/* Contenedor principal del Dashboard */
+.dashboard-container {
+  padding: 40px;
+  margin-left: 280px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+}
+
+.dashboard-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #6d28d9, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #4f46e5;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Botón Mostrar/Ocultar Tabla */
+.show-hide-table-button {
+  font-size: 1rem;
+  padding: 12px 25px;
+  text-transform: none;
+  border-radius: 10px;
+  background-color: #4f46e5;
+  color: #fff;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.show-hide-table-button:hover {
+  background-color: #3730a3;
+  transform: translateY(-3px);
+}
+
+/* Tabla de Alertas */
+.table-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.alert-table-container {
+  flex: 1 1 400px; /* Ancho mínimo de 400px y permite que crezca */
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.alert-level {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Colores para los niveles de alerta */
+.alert-level[data-level="0"] {
+  background-color: #00c853;
+}
+
+.alert-level[data-level="1"] {
+  background-color: #ff9800;
+}
+
+.alert-level[data-level="2"] {
+  background-color: #f44336;
+}
+
+.alert-level[data-level="3"] {
+  background-color: #b71c1c;
+}
+
+/* Contenedor de los filtros */
+.filters-container {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.filters-container .MuiSelect-root {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Contenedor de gráficos y tabla */
+.charts-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+  justify-content: center;
+  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+  margin-bottom: 20px;
+}
+
+.chart-box {
+  flex: 1 1 600px; /* Ancho mínimo de 600px y permite que crezca */
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 1400px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.chart-placeholder {
+  height: 500px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Estilos para los Select de Material-UI */
+.MuiInputBase-root {
+  background-color: #ffffff;
+  border-radius: 8px !important;
+  min-width: 200px;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #cbd5e1 !important;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #4f46e5 !important;
+}
+
+.MuiSvgIcon-root {
+  color: #4f46e5;
+}
+
+/* Contenedor de estadísticas */
+.stats-container {
+  display: flex;
+  justify-content: space-between; /* Ajusta la separación entre los elementos */
+  gap: 30px; /* Espaciado entre las tarjetas */
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  align-items: flex-start; /* Alinea las tarjetas y alertas en la parte superior */
+}
+
+/* Tarjeta de estadísticas */
+/* Tarjeta de estadísticas */
+.stat-card {
+  flex: 1 1 250px; /* Ancho mínimo reducido */
+  background: linear-gradient(to bottom right, #4f46e5, #6d28d9);
+  border-radius: 12px; /* Tamaño ligeramente reducido */
+  padding: 15px; /* Menor espacio interno */
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra ajustada */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px); /* Efecto más sutil */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.stat-icon {
+  font-size: 2.2rem; /* Tamaño reducido */
+  margin-bottom: 10px;
+}
+
+.stat-info h3 {
+  font-size: 1.3rem; /* Tamaño reducido */
+  margin-bottom: 8px;
+}
+
+.stat-info p {
+  font-size: 2rem; /* Tamaño reducido */
+  font-weight: bold;
+}
+
+/* Contenedor de alertas dentro de las tarjetas */
+.alert-container {
+  margin-top: 10px; /* Menor separación */
+  display: flex;
+  justify-content: center;
+  gap: 6px; /* Espaciado más compacto */
+}
+
+.alert-level {
+  font-size: 0.8rem; /* Tamaño reducido */
+  font-weight: bold;
+  border-radius: 6px; /* Bordes más pequeños */
+  padding: 5px 10px; /* Menor espacio interno */
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  transition: transform 0.2s ease;
+}
+
+.alert-level:hover {
+  transform: scale(1.05); /* Escalado más discreto */
+}
+
+
+/* Colores de las alertas */
+.alert-level[data-level="1"] {
+  background-color: #00c853; /* Verde */
+}
+
+.alert-level[data-level="2"] {
+  background-color: #ff9800; /* Naranja */
+}
+
+.alert-level[data-level="3"] {
+  background-color: #f44336; /* Rojo */
+}
+
+.alert-level[data-level="4"] {
+  background-color: #b71c1c; /* Rojo oscuro */
+}
+.alert-level[data-level="5"] {
+  background-color: #4caf50; /* Verde oscuro para Completado */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .chart-box,
+  .alert-table-container {
+    margin: 10px;
+  }
+
+  .alert-horizontal-container {
+    flex-wrap: wrap; /* Permite que las alertas se ajusten en pantallas pequeñas */
+    justify-content: center;
+  }
+}

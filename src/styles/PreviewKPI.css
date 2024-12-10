@@ -1,0 +1,376 @@
+/* PreviewKPI.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ecf0f1;
+}
+
+.preview-kpi-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.preview-kpi-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.loading-text,
+.error-text {
+  text-align: center;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.error-text {
+  color: #e74c3c;
+}
+
+.kpi-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.kpi-table th,
+.kpi-table td {
+  border: 1px solid #ecf0f1;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.kpi-table th {
+  background-color: #34495e;
+  color: #ecf0f1;
+  font-weight: bold;
+  text-align: center;
+}
+
+.kpi-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.kpi-table tr {
+  border-bottom: 2px solid #dfe6e9;
+}
+
+.kpi-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.save-button-preview,
+.close-button-preview-kpi,
+.edit-button-preview,
+.delete-button-preview,
+.view-button-preview {
+  display: inline-block;
+  align-items: center;
+  padding: 6px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.close-button-preview-kpi{
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  color: white;
+}
+
+.close-button-preview-kpi:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+}
+
+.edit-button-preview {
+  margin-right: 15px;
+  background-color: turquoise;
+  color: #ffffff;
+}
+.edit-button-preview:hover {
+  background-color: #275dae;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.save-button-preview {
+  margin-right: 15px;
+  background: linear-gradient(to right, #28a745, #007bff); /* Gradiente */
+  color: #ffffff;
+}
+
+.save-button-preview:hover {
+  margin-right: 15px;
+  background-color: #0a632f;
+  color: #ffffff;
+}
+
+
+
+.delete-button-preview {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.delete-button-preview:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.view-button-preview {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.view-button-preview:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Modal Específico */
+.modal-overlay-preview-kpi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content-preview-kpi {
+  padding: 10px;
+  background-color: #fff;
+  width: 50%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+
+}
+
+/* Cuerpo del Modal */
+.modal-content-preview-kpi h2 {
+  margin-bottom: 20px;
+  color: #2980b9;;
+  text-align: center;
+  font-size: 32px;
+}
+
+.modal-buttons-preview {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+/* Estilos para la información del KPI en el modal */
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  color: #2c3e50;
+}
+
+.kpi-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border-left: 6px solid #2980b9;
+  width: 95%;
+}
+
+.kpi-section:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.kpi-section h3 {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  color: #2980b9;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.kpi-section h3 svg {
+  margin-right: 10px;
+}
+
+.field-group-preview {
+  margin-bottom: 15px;
+}
+
+.field-title-preview {
+  font-size: 14px;
+  font-weight: bold;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-value-preview {
+  font-size: 16px;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #bdc3c7;
+}
+
+.field-group-preview:last-child {
+  margin-bottom: 0;
+}
+
+.card-container-preview-kpi {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en dispositivos más pequeños */
+  gap: 10px; /* Espaciado entre tarjetas */
+  justify-content: center; /* Centrar tarjetas horizontalmente */
+  
+}
+
+.stat-card-preview-kpi {
+  flex: 1 1 250px; /* Tamaño flexible con un ancho mínimo */
+  background: linear-gradient(to bottom right, #4f46e5, #6d28d9); /* Fondo con degradado */
+  text-align: center; /* Centrar texto */
+  color: #fff; /* Texto blanco */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animación suave en hover */
+}
+
+.stat-card-preview-kpi:hover {
+  transform: translateY(-4px); /* Eleva ligeramente la tarjeta */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+}
+/* Custom Confirmation Dialog (anteriormente en react-confirm-alert) */
+/* Ya no se usa, ya que se ha implementado ConfirmModal */
+
+.stat-info-preview-kpi p {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+/* Prevenir el scroll del body cuando el modal está abierto */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .preview-kpi-container {
+    padding: 15px;
+  }
+
+  .preview-kpi-title {
+    font-size: 28px;
+  }
+
+  .kpi-table th,
+  .kpi-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .delete-button-preview,
+  .view-butto-previewn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .preview-kpi-modal {
+    width: 80%;
+  }
+
+  .kpi-section h3 {
+    font-size: 20px;
+  }
+
+  .field-value-preview {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-table thead {
+    display: none;
+  }
+
+  .kpi-table,
+  .kpi-table tbody,
+  .kpi-table tr,
+  .kpi-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .kpi-table tr {
+    margin-bottom: 15px;
+  }
+
+  .kpi-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .kpi-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .preview-kpi-modal {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .kpi-section h3 {
+    font-size: 18px;
+  }
+
+  .field-title-preview,
+  .field-value-preview {
+    font-size: 14px;
+  }
+
+  .edit-button-preview,
+  .close-button-preview {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-buttons-preview {
+    justify-content: center;
+    margin: 100px;  
+  }
+}

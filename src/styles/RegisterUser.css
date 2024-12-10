@@ -1,0 +1,96 @@
+/* Estilo para el contenedor del formulario */
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Estilo para el título del formulario */
+  .form-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estilo general para los campos del formulario */
+  .form-group {
+    margin-bottom: 25px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  /* Estilo para los inputs */
+  .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+  }
+  
+  /* Estilo para el select múltiple de react-select */
+  .form-select-multiple {
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .form-select-multiple__control {
+    border: 2px solid #ddd !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-select-multiple__control--is-focused {
+    border-color: #2575fc !important;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.4) !important;
+  }
+  
+  /* Estilo del botón */
+  .form-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #2575fc, #6a11cb, #e83e8c);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+  }
+  
+  /* Mensaje de éxito o error */
+  .form-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  

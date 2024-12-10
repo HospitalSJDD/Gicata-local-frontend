@@ -1,0 +1,87 @@
+.otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, rgba(105, 105, 105, 0.8), rgba(255, 193, 37, 0.7), rgba(255, 69, 0, 0.7), rgba(34, 139, 34, 0.7), rgba(0, 0, 0, 0.8));
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    position: relative;
+  }
+  
+  .otp-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .login-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .otp-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    color: #333333;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: fadeInAnimation 2s ease-in-out;
+  }
+  
+  .otp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .otp-input {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    width: 80%;
+  }
+  
+  .otp-button {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .otp-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .otp-message {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes fadeInAnimation {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }

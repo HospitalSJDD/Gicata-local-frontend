@@ -1,0 +1,269 @@
+/* AdminUser.css */
+
+/* Contenedor principal del listado */
+.list-container-admin-user {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título del listado */
+.list-title-admin-user {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Lista de usuarios */
+.user-list-admin-user {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada ítem del usuario */
+.user-list-item-admin-user {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Estilos al pasar el cursor */
+.user-list-item-admin-user:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+}
+
+/* Información del usuario */
+.user-info-admin-user p,
+.user-permissions-admin-user p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Negrita para títulos dentro de cada ítem */
+.user-info-admin-user strong,
+.user-permissions-admin-user strong {
+  font-weight: 600;
+}
+
+/* Mensaje de éxito o error */
+.message-admin-user {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Contenedor de botones en el listado */
+.list-button-container-admin-user {
+  margin-top: 20px;
+}
+
+/* Estilo del botón Añadir Usuario */
+.form-button-add-user-admin-user {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #28a745, #007bff); /* Gradiente */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-button-add-user-admin-user:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+}
+
+/* Estilo del contenedor del formulario */
+.form-container-admin-user {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Título del formulario */
+.form-title-admin-user {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilo general para los campos del formulario */
+.form-group-admin-user {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-group-admin-user label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Estilo para los inputs */
+.form-input-admin-user {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input-admin-user:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+}
+
+/* Estilo para el select múltiple de react-select */
+.form-select-multiple-admin-user {
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-select-multiple-admin-user__control {
+  border: 2px solid #ddd !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select-multiple-admin-user__control--is-focused {
+  border-color: #2575fc !important;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.4) !important;
+}
+
+/* Contenedor de botones dentro del formulario */
+.form-buttons-container-admin-user {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Añade espacio entre los botones */
+  margin-top: 20px;
+}
+
+/* Botón para crear o actualizar usuario */
+.form-button-add-user-admin-user,
+.form-button-delete-user-admin-user,
+.form-button-cancel-admin-user {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #2575fc, #6a11cb, #e83e8c);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-button-add-user-admin-user:hover,
+.form-button-delete-user-admin-user:hover,
+.form-button-cancel-admin-user:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+}
+
+/* Botón específico para borrar */
+.form-button-delete-user-admin-user {
+  background: linear-gradient(to right, #ff4e50, #f9d423); /* Color distinto para el botón de borrar */
+}
+
+.form-button-delete-user-admin-user:hover {
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+}
+
+/* Botón de cancelar */
+.form-button-cancel-admin-user {
+  background: #6c757d; /* Color gris para cancelar */
+}
+
+.form-button-cancel-admin-user:hover {
+  background: #5a6268;
+}
+
+/* Estilo para mensaje sin usuarios */
+.no-users-admin-user {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Estilos adicionales para mejorar la estética */
+
+/* Lista de usuarios con scroll si es necesario */
+.user-list-admin-user {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar personalizado */
+.user-list-admin-user::-webkit-scrollbar {
+  width: 8px;
+}
+
+.user-list-admin-user::-webkit-scrollbar-thumb {
+  background-color: rgba(37, 117, 252, 0.5);
+  border-radius: 4px;
+}
+
+/* Mejorar la apariencia de los permisos */
+.user-permissions-admin-user p {
+  font-style: italic;
+  color: #555;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+  .list-container-admin-user,
+  .form-container-admin-user {
+    padding: 20px;
+  }
+
+  .form-buttons-container-admin-user {
+    gap: 10px;
+  }
+
+  .form-button-add-user-admin-user,
+  .form-button-delete-user-admin-user,
+  .form-button-cancel-admin-user {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .list-title-admin-user,
+  .form-title-admin-user {
+    font-size: 24px;
+  }
+
+  .user-info-admin-user p,
+  .user-permissions-admin-user p {
+    font-size: 14px;
+  }
+}

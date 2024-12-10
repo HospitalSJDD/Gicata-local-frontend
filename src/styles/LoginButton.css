@@ -1,0 +1,41 @@
+/* Botón de inicio de sesión */
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4A90E2;  /* Azul claro serio */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Ícono de Google dentro del botón */
+  .google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  /* Efectos hover y active */
+  .login-button:hover {
+    background-color: #357ABD;
+  }
+  
+  .login-button:active {
+    background-color: #2A5E90;
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .login-button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  

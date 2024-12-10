@@ -1,0 +1,172 @@
+/* Contenedor principal de la barra lateral */
+.sidebar-container {
+  width: 280px;
+  height: 100vh;
+  background: #1e293b;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
+  overflow: visible; /* Permitir que los elementos desplazados sean visibles */
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 4px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding-left: 10px; /* Agrega espacio a la izquierda para evitar cortes */
+  margin: 0;
+}
+
+.sidebar-nav ul li {
+  font-size: 1.1rem;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-left: 0; /* Asegura que no haya desplazamiento inicial */
+}
+
+.sidebar-nav ul li:hover {
+  background: #334155;
+  transform: translateX(5px); /* Desplazamiento hacia la derecha */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-nav ul li.active {
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  transform: translateX(5px); /* Mantener el desplazamiento en el activo */
+}
+
+.sidebar-nav ul li.active svg {
+  color: #fff;
+}
+
+/* Estilos para el menú desplegable */
+li.dropdown {
+  cursor: pointer;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.dropdown.open .dropdown-icon {
+  transform: rotate(180deg);
+  padding: 5px;
+}
+
+/* Menú anidado */
+.nested-menu {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding-right: 4px;
+  transition: max-height 0.3s ease, margin-left 0.3s ease;
+}
+
+.dropdown.open + .nested-menu {
+  max-height: 100%; /* Ajusta según el contenido */
+  margin-left: 20px; /* Mantén el desplazamiento hacia la derecha al abrir */
+}
+
+.nested-menu li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.nested-menu li:hover {
+  background: #475569;
+  transform: translateX(5px);
+}
+
+.nested-menu li.active {
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.nested-menu li.active svg {
+  color: #fff;
+}
+
+
+.sidebar-footer {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 25px;
+}
+
+.footer-button {
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+
+}
+
+.footer-button:hover {
+  background: #334155;
+  transform: translateX(5px);
+}
+
+.footer-button.active {
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.footer-button.active svg {
+  color: #fff;
+}

@@ -1,0 +1,141 @@
+/* Contenedor principal para la página completa con fondo animado */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  display: flex;
+  min-height: 100vh; /* Asegúrate de que siempre cubre la altura de la ventana */
+  width: 100%;
+  background: linear-gradient(to bottom right, rgba(105, 105, 105, 0.8), rgba(255, 69, 0, 0.8), rgba(255, 99, 71, 0.7), rgba(220, 20, 60, 0.7), rgba(255, 0, 0, 0.7));
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+/* Contenedor del contenido principal */
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  /* Remueve o comenta la siguiente línea si causa problemas */
+  /* min-height: calc(100vh - 60px); */
+  box-sizing: border-box;
+}
+
+
+/* Contenedor del contenido principal */
+/* Contenedor principal del contenido */
+.content-container-the-comeback {
+  flex: 1;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%; /* Establece el ancho máximo deseado */
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+  overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+}
+
+.content-container.active {
+  opacity: 1; /* Totalmente visible */
+  transform: translateY(0); /* Sin desplazamiento */
+}
+
+
+/* Sección Hero */
+
+.hero-section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 50px 20px; /* Ajusta el padding si es necesario */
+  text-align: center;
+  color: #fff;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.0rem;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+}
+
+.hero-description {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.featured-image-section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.featured-image {
+  width: 100%;
+  max-width: 800px; /* Ajusta este valor según tus necesidades */
+  height: auto;
+  margin: 0 auto;
+  display: block; /* Asegura que la imagen se centre correctamente */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  filter: brightness(0.9) saturate(0.8);
+  opacity: 0.9;
+}
+
+.featured-image:hover {
+  transform: scale(1.08) rotateZ(1deg) translateY(-5px);
+  box-shadow: 0 12px 24px rgba(255, 105, 135, 0.4);
+  filter: brightness(1.1) saturate(1.2);
+  opacity: 1;
+}
+
+
+/* Título del panel */
+.panel-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Descripción del panel */
+.panel-description {
+  font-size: 1.2rem;
+  color: #555;
+}

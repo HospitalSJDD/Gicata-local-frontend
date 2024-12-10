@@ -1,0 +1,70 @@
+/* Contenedor principal de la página de preguntas frecuentes */
+.faq-container {
+  width: calc(100% - 280px); /* Ajustar para que la página de FAQ se vea correctamente con la barra lateral */
+  margin-left: 280px; /* Desplazamiento igual al ancho de la barra lateral */
+  padding: 40px;
+  color: #1e293b; /* Color del texto */
+  min-height: 100vh;
+}
+
+/* Título de la sección de preguntas frecuentes */
+.faq-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1e293b;
+  text-align: center;
+}
+
+/* Contenido de preguntas frecuentes */
+.faq-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los elementos de FAQ */
+}
+
+/* Cada ítem de FAQ */
+.faq-item {
+  background: #ffffff; /* Fondo blanco para resaltar cada pregunta */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #f1f5f9; /* Cambia ligeramente el color de fondo al pasar el cursor */
+}
+
+/* Cabecera de cada ítem de FAQ (pregunta e ícono) */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Pregunta de cada FAQ */
+.faq-question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* Ícono para expandir o colapsar */
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease; /* Transición suave para el ícono */
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg); /* Gira el ícono al abrir */
+}
+
+/* Respuesta de cada FAQ */
+.faq-answer {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #475569; /* Color ligeramente más oscuro para mejor contraste */
+  margin-top: 10px;
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Transición suave para abrir la respuesta */
+}
