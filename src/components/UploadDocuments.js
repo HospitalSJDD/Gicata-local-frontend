@@ -5,7 +5,7 @@ import '../styles/UploadDocuments.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ConfirmModal from './ConfirmModal'; // Importar el componente ConfirmModal
-
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const UploadDocuments = ({ onSuccess }) => {
   // Estados existentes
   const [selectedFile, setSelectedFile] = useState(null);
@@ -100,7 +100,7 @@ const UploadDocuments = ({ onSuccess }) => {
 
   const fetchHistoricalDates = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/dates");
+      const response = await fetch(`${BACKEND_URL}/api/dates`);
       const data = await response.json();
       if (response.ok) {
         // Suponiendo que `data` es una lista de objetos con `month` y `year`
@@ -197,7 +197,7 @@ const UploadDocuments = ({ onSuccess }) => {
   
     try {
       // Primera solicitud: Subir archivo
-      const fileUploadResponse = await fetch('http://localhost:5000/upload', {
+      const fileUploadResponse = await fetch(`${BACKEND_URL}/upload`, {
         method: 'POST',
         body: formData,
       });
@@ -208,7 +208,7 @@ const UploadDocuments = ({ onSuccess }) => {
 
         try {
           // Segunda solicitud: Actualizar fecha
-          const dateUpdateResponse = await fetch('http://localhost:5000/api/date-add', {
+          const dateUpdateResponse = await fetch(`${BACKEND_URL}/api/date-add`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json', // Asegura que el backend interprete el JSON correctamente
@@ -285,7 +285,7 @@ const UploadDocuments = ({ onSuccess }) => {
     setIsLoading(true); 
     const calculation_date = `${monthModal} ${yearModal}`;
     try {
-      const response = await fetch(`http://localhost:5000/whipe_database/${encodeURIComponent(calculation_date)}`,  // Decodifica la URL.  
+      const response = await fetch(`${BACKEND_URL}/whipe_database/${encodeURIComponent(calculation_date)}`,  // Decodifica la URL.  
       {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
@@ -295,7 +295,7 @@ const UploadDocuments = ({ onSuccess }) => {
         toast.success('Datos eliminados con éxito.');
 
         try {
-          const dateDeleteResponse = await fetch('http://localhost:5000/api/date-delete', {
+          const dateDeleteResponse = await fetch(`${BACKEND_URL}/api/date-delete`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',

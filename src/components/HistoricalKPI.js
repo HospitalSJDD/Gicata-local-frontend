@@ -155,7 +155,7 @@ const HistoricalKPI = () => {
     fetchComponents();
     fetchHistoricalDates(); // Añadido para obtener las fechas históricas
   }, []);
-
+  const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
   const clearData = () => {
     setMonth("");
     setYear("");
@@ -168,7 +168,7 @@ const HistoricalKPI = () => {
   const fetchHistoricals = async () => {
     try {
       console.log("Intentando conseguir los Historical...");
-      const response = await fetch("http://localhost:5000/api/results"); // Ruta actualizada
+      const response = await fetch(`${BACKEND_URL}/api/results`); // Ruta actualizada
       const data = await response.json();
       console.log("Respuesta del backend:", data);
       if (response.ok) {
@@ -187,7 +187,7 @@ const HistoricalKPI = () => {
 
   const fetchHistoricalDates = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/dates");
+      const response = await fetch(`${BACKEND_URL}/api/dates`);
       const data = await response.json();
       if (response.ok) {
         // Suponiendo que `data` es una lista de objetos con `month` y `year`
@@ -244,7 +244,7 @@ const HistoricalKPI = () => {
     const calculation_date = `${calculateMonth} ${calculateYear}-${type}`;
     try {
       const response = await fetch(
-        `http://localhost:5000/calculate/${encodeURIComponent(
+        `${BACKEND_URL}/calculate/${encodeURIComponent(
           calculation_date
         )}`,
         {
@@ -280,10 +280,10 @@ const HistoricalKPI = () => {
     }
     const calculation_date = `${calculateMonth} ${calculateYear}`;
     console.log(calculation_date);
-    console.log(`http://localhost:5000/whipe_results/${calculation_date}`);
+    console.log(`${BACKEND_URL}/whipe_results/${calculation_date}`);
     try {
       const response = await fetch(
-        `http://localhost:5000/whipe_results/${calculation_date}`,
+        `${BACKEND_URL}/whipe_results/${calculation_date}`,
         {
           method: "DELETE",
           headers: {
@@ -312,7 +312,7 @@ const HistoricalKPI = () => {
 
   const fetchPrograms = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/programs");
+      const response = await fetch(`${BACKEND_URL}/api/programs`);
       const data = await response.json();
       if (response.ok) {
         setListPrograms(data);
@@ -327,7 +327,7 @@ const HistoricalKPI = () => {
 
   const fetchComponents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/components");
+      const response = await fetch(`${BACKEND_URL}/api/components`);
       const data = await response.json();
       if (response.ok) {
         setListComponents(data);

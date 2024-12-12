@@ -5,6 +5,7 @@ import UploadDocuments from './UploadDocuments';
 import Questions from './Questions';
 import AdminUser from './AdminUser'; // Asegúrate de importar el componente de administración de usuarios
 import { Navigate } from 'react-router-dom';
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const ProtectedMenu = () => {
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
@@ -14,7 +15,7 @@ const ProtectedMenu = () => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/user', {
+        const response = await fetch(`${BACKEND_URL}/api/user`, {
           method: 'GET',
           credentials: 'include'
         });

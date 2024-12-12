@@ -8,16 +8,17 @@ const OTPVerification = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
     const formattedOtp = otpCode.replace(/\s+/g, '');
 
     try {
-      const response = await fetch('http://localhost:5000/verify', {
+      const response = await fetch(`${BACKEND_URL}/verify`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',  // Asegura que se envíe como JSON
         },
-        credentials: 'include',  // Permitir que las cookies de sesión se envíen con la solicitud
+          // Permitir que las cookies de sesión se envíen con la solicitud
         body: JSON.stringify({ otp_code: formattedOtp }),  // Enviar el código OTP como JSON
       });
 

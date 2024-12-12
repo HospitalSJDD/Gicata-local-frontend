@@ -15,7 +15,7 @@ import {
   faHospitalUser,
 } from "@fortawesome/free-solid-svg-icons";
 import logo_coquimbo from "../assets/images/salud_coquimbo.png";
-
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const SidebarMenu = ({
   onHomeClick,
   onUploadClick,
@@ -37,7 +37,7 @@ const SidebarMenu = ({
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/user", {
+        const response = await fetch(`${BACKEND_URL}/api/user`, {
           credentials: "include",
         });
         if (response.ok) {

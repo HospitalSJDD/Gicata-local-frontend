@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import '../styles/AdminUser.css';
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 
 const AdminUser = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const AdminUser = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users', {
+        const response = await fetch(`${BACKEND_URL}/api/users`, {
           method: 'GET',
         });
         const data = await response.json();
@@ -52,7 +53,7 @@ const AdminUser = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/usersUpdate/${selectedUser.id}`, {
+      const response = await fetch(`${BACKEND_URL}/${selectedUser.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +95,8 @@ const AdminUser = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/register', {
+      const response = await fetch('${BACKEND_URL}/register', {
+        
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -124,7 +126,7 @@ const AdminUser = () => {
   // Handle deleting a user
   const handleDeleteUser = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/usersDelete/${userId}`, {
+      const response = await fetch(`${BACKEND_URL}/api/usersDelete/${userId}`, {
         method: 'DELETE',
       });
 

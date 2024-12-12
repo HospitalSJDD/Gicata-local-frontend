@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import '../styles/LoginError.css'; // Nuevo archivo CSS para estilos personalizados de la página de error
-
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 
 
 
@@ -12,7 +12,7 @@ const LoginError = () => {
   useEffect(() => {
     const fetchSessionData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/session_data', {
+        const response = await fetch(`${BACKEND_URL}/session_data`, {
           method: 'GET',
           credentials: 'include', // Asegúrate de incluir las credenciales de la sesión
         });

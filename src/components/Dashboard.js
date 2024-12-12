@@ -49,6 +49,8 @@ const Dashboard = () => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
+  const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
+
   // Función para obtener el mes anterior en español
   const getPreviousMonth = () => {
     const date = new Date();
@@ -235,7 +237,7 @@ const Dashboard = () => {
 
   const fetchPrograms = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/programs");
+      const response = await fetch(`${BACKEND_URL}/api/programs`);
       const data = await response.json();
       if (response.ok) {
         setListPrograms(data);
@@ -249,7 +251,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/alerts")
+    fetch(`${BACKEND_URL}/api/alerts`)
       .then((response) => response.json())
       .then((data) => {
         setAlertsData(data); // Asegúrate de que data contenga 'programs' y 'components'
@@ -259,7 +261,7 @@ const Dashboard = () => {
 
   const fetchComponents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/components");
+      const response = await fetch(`${BACKEND_URL}/api/components`);
       const data = await response.json();
       if (response.ok) {
         setListComponents(data);
@@ -273,7 +275,7 @@ const Dashboard = () => {
   const fetchHistoricalPrograms = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/historical-programs"
+        `${BACKEND_URL}/api/historical-programs`
       );
       const data = await response.json();
       if (response.ok) {
@@ -288,7 +290,7 @@ const Dashboard = () => {
   const fetchHistoricalComponents = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/historical-components"
+        `${BACKEND_URL}/api/historical-components`
       );
       const data = await response.json();
       if (response.ok) {
@@ -302,7 +304,7 @@ const Dashboard = () => {
 
   const fetchHistoricalDates = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/dates");
+      const response = await fetch(`${BACKEND_URL}/api/dates`);
       const data = await response.json();
       if (response.ok) {
         // Supongo que `data` es una lista de objetos con `month` y `year`
@@ -349,7 +351,7 @@ const Dashboard = () => {
 
   const fetchResultados = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/results");
+      const response = await fetch(`${BACKEND_URL}/api/results`);
       const data = await response.json();
       if (response.ok) {
         setListResults(data);

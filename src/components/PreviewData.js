@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import ConfirmModal from './ConfirmModal'; // Importa el ConfirmModal
 
 Modal.setAppElement('#root'); // Para accesibilidad
-
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const PreviewData = () => {
   const [programList, setProgramList] = useState([]);
   const [componentList, setComponentList] = useState([]);
@@ -31,7 +31,7 @@ const PreviewData = () => {
 
   const fetchPrograms = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/programs');
+      const response = await fetch(`${BACKEND_URL}/api/programs`);
       const data = await response.json();
       if (response.ok) setProgramList(data);
       else toast.error(`Error al obtener programas: ${data.error}`);
@@ -68,7 +68,7 @@ const PreviewData = () => {
 
   const fetchComponents = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/components');
+      const response = await fetch(`${BACKEND_URL}/api/components`);
       const data = await response.json();
       if (response.ok) setComponentList(data);
       else toast.error(`Error al obtener componentes: ${data.error}`);
@@ -115,7 +115,7 @@ const PreviewData = () => {
       // Actualizar el programa con sus umbrales de alerta
       if (!componentToEdit){
         const responseProgram = await fetch(
-          `http://localhost:5000/api/program-update/${editedItem.id}`,
+          `${BACKEND_URL}/api/program-update/${editedItem.id}`,
           {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -141,7 +141,7 @@ const PreviewData = () => {
       // Actualizar componentes existentes
       else if (componentToEdit) {
         const response = await fetch(
-          `http://localhost:5000/api/component-update/${componentToEdit.id}`,
+          `${BACKEND_URL}/api/component-update/${componentToEdit.id}`,
           {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -181,7 +181,7 @@ const PreviewData = () => {
     try {
         
         if (type === 'Program') {
-            const response = await fetch(`http://localhost:5000/api/program-delete/${ID}`, {
+            const response = await fetch(`${BACKEND_URL}/api/program-delete/${ID}`, {
                 method: 'DELETE',
             });
 
@@ -196,7 +196,7 @@ const PreviewData = () => {
                 toast.error(`Error: ${result.error}`);
             }
         } else if (type === 'Component') {
-            const response = await fetch(`http://localhost:5000/api/component-delete/${ID}`, {
+            const response = await fetch(`${BACKEND_URL}/api/component-delete/${ID}`, {
                 method: 'DELETE',
             });
 

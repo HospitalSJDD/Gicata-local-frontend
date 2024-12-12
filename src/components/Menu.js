@@ -12,6 +12,7 @@ import HistoricalKPI from './HistoricalKPI';
 import UploadData from './UploadData';
 import PreviewData from './PreviewData';
 import collage from '../assets/images/collage.png';
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const Menu = () => {
   const [view, setView] = useState('default'); // Estado para controlar la vista actual
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -70,7 +71,7 @@ const Menu = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:5000/logout', {
+      const response = await fetch(`${BACKEND_URL}/logout`, {
         method: 'POST',
         credentials: 'include'
       });

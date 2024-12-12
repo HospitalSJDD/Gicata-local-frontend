@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ConfirmModal from './ConfirmModal'; // Importar el nuevo componente
 
 Modal.setAppElement('#root'); // Para accesibilidad
-
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const PreviewKPI = () => {
   const [kpiList, setKpiList] = useState([]);
   const [filteredKpiList, setFilteredKpiList] = useState([]);
@@ -49,7 +49,7 @@ const PreviewKPI = () => {
     const fetchKPIs = async () => {
       try {
         console.log('Intentando obtener KPIs desde el backend...');
-        const response = await fetch('http://localhost:5000/api/kpi'); // Ruta actualizada
+        const response = await fetch(`${BACKEND_URL}/api/kpi`); // Ruta actualizada
         const data = await response.json();
         console.log('Respuesta del backend:', data);
         if (response.ok) {
@@ -92,7 +92,7 @@ const PreviewKPI = () => {
 
   const fetchPrograms = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/programs');
+        const response = await fetch(`${BACKEND_URL}/api/programs`);
         const data = await response.json();
         if (response.ok) {
             setListPrograms(data);
@@ -107,7 +107,7 @@ const PreviewKPI = () => {
 
 const fetchComponents = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/components');
+        const response = await fetch(`${BACKEND_URL}/api/components`);
         const data = await response.json();
         if (response.ok) {
             
@@ -134,7 +134,7 @@ const fetchComponents = async () => {
 
   const handleDelete = async (kpiId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/kpi/delete/${kpiId}`, {
+      const response = await fetch(`${BACKEND_URL}/api/kpi/delete/${kpiId}`, {
         method: 'DELETE',
       });
       const data = await response.json();
@@ -192,7 +192,7 @@ const fetchComponents = async () => {
 
       console.log('Datos que se enviarán al backend:', JSON.stringify(payload));
 
-      const response = await fetch(`http://localhost:5000/api/kpi/update/${editedKpi.id}`, {
+      const response = await fetch(`${BACKEND_URL}/api/kpi/update/${editedKpi.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -3,7 +3,7 @@ import "../styles/UploadData.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ConfirmModal from "./ConfirmModal"; // Importar el nuevo componente
-
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const UploadData = () => {
   const [selectedType, setSelectedType] = useState("");
   const [name, setName] = useState("");
@@ -66,7 +66,7 @@ const UploadData = () => {
 
   const fetchPrograms = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/programs");
+      const response = await fetch(`${BACKEND_URL}/api/programs`);
       const data = await response.json();
       if (response.ok) {
         setListPrograms(data);
@@ -81,7 +81,7 @@ const UploadData = () => {
 
   const fetchComponents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/components");
+      const response = await fetch(`${BACKEND_URL}/api/components`);
       const data = await response.json();
       if (response.ok) {
         setListComponents(data);
@@ -112,7 +112,7 @@ const UploadData = () => {
     try {
       if (selectedTypeModal === "Programa") {
         const response = await fetch(
-          `http://localhost:5000/api/program-delete/${programID}`,
+          `${BACKEND_URL}/api/program-delete/${programID}`,
           {
             method: "DELETE",
           }
@@ -130,7 +130,7 @@ const UploadData = () => {
         }
       } else if (selectedTypeModal === "Componente") {
         const response = await fetch(
-          `http://localhost:5000/api/component-delete/${componentID}`,
+          `${BACKEND_URL}/api/component-delete/${componentID}`,
           {
             method: "DELETE",
           }
@@ -196,7 +196,7 @@ const UploadData = () => {
 
     try {
       if (selectedType === "Programa") {
-        const response = await fetch("http://localhost:5000/api/program-add", {
+        const response = await fetch(`${BACKEND_URL}/api/program-add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -237,7 +237,7 @@ const UploadData = () => {
           console.log(monthRange);
         }
         const response = await fetch(
-          "http://localhost:5000/api/component-add",
+          `${BACKEND_URL}/api/component-add`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

@@ -4,6 +4,7 @@ import DataTable from './DataTable';
 import ConfirmModal from './ConfirmModal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const BACKEND_URL = "https://gicata-backend-847472302122.southamerica-west1.run.app";
 const UploadKPI = ({ onSuccess }) => {
 
   const [listComponents, setListComponents] = useState([]);
@@ -112,7 +113,7 @@ const UploadKPI = ({ onSuccess }) => {
 
 const fetchPrograms = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/programs');
+        const response = await fetch(`${BACKEND_URL}/api/programs`);
         const data = await response.json();
         if (response.ok) {
             setListPrograms(data);
@@ -127,7 +128,7 @@ const fetchPrograms = async () => {
 
 const fetchComponents = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/components');
+        const response = await fetch(`${BACKEND_URL}/api/components`);
         const data = await response.json();
         if (response.ok) {
             
@@ -180,7 +181,7 @@ const fetchComponents = async () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/get-data-table', {
+      const response = await fetch(`${BACKEND_URL}/get-data-table`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -277,7 +278,7 @@ const fetchComponents = async () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/get-data-table', {
+      const response = await fetch(`${BACKEND_URL}/get-data-table`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -431,7 +432,7 @@ const fetchComponents = async () => {
           },
     };
   
-    const response = await fetch('http://localhost:5000/register_kpi', {
+    const response = await fetch(`${BACKEND_URL}/register_kpi`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
